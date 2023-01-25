@@ -8,7 +8,6 @@ A CMake project template that uses Conan, Clang Tidy, and Boost Test.
 - In-source builds are disabled.
 
 ### Folders
-- built - Contains items related to the build process of CMake and the chosen build system.
 - target - Contains local targets to build related to this project.
 - template - Contains boilerplate structures that are filled in to make new targets.
 - util - Contains scripts and/or programs that are used help build, maintain, or package the project.
