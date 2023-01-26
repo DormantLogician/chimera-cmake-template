@@ -2,10 +2,12 @@ cmake_minimum_required(VERSION 3.20)
 
 set(PROJECT_IS_ROOT CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
 
+# Set default to 'Release' to avoid pushing out debug builds accidentally.
 if (NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
 
+# Forbid in-source builds in order to keep root project directory from being polluted with binary files.
 if (${PROJECT_IS_ROOT} AND
     NOT (CMAKE_BINARY_DIR STREQUAL CMAKE_CURRENT_BINARY_DIR))
     message(FATAL_ERROR "In-source builds are prohibited, please run CMake relative to 'built' directory.")
