@@ -1,4 +1,4 @@
-set(SUITE_NAME specs_unitname)
+set(SUITE_NAME specs_unitname_cl)
 set(SUITE_TARGET ${BINARY_NAME}_${SUITE_NAME})
 
 add_library(${SUITE_TARGET} OBJECT
