@@ -4,4 +4,5 @@ set(TESTING_FRAMEWORK_TARGET Boost::unit_test_framework)
 
 makeTest(${TEST_MODULE_TARGET} ${TEST_MODULE_TARGET}.cpp)
 
-add_subdirectory(fn/specs_unitname)
+add_subdirectory(fn/specs_unitname_fn)
+add_subdirectory(cl/specs_unitname_cl)

@@ -1,6 +1,6 @@
 #include <boost/test/unit_test.hpp>
 
-BOOST_AUTO_TEST_SUITE(unitname);
+BOOST_AUTO_TEST_SUITE(unitname_cl);
 
 BOOST_AUTO_TEST_CASE(First_spec_description)
 {
