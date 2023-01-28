@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+
 include(CTest) # Enable testing.
 
 # Enable binary and source packaging targets (for certain generators).

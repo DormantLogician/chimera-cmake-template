@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+
 Checks: '-*,
          cppcoreguidelines-narrowing-conversions,
          cppcoreguidelines-init_variables,

@@ -1,3 +1,5 @@
+SPDX-License-Identifier: MIT
+
 # Chimera
 ### Description
 A CMake project template that uses Conan, Clang Tidy, and Boost Test.

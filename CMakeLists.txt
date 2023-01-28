@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+
 cmake_minimum_required(VERSION 3.20)
 
 set(PROJECT_IS_ROOT CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)

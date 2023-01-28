@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: MIT
+
 #include <boost/test/unit_test.hpp>
 
 #include "math/add.h"
