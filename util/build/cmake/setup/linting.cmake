@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+
 find_program(CLANG_TIDY_EXE NAMES "clang-tidy" DOC "Path to clang-tidy static analysis tool.")
 
 if (NOT CLANG_TIDY_EXE)

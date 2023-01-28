@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: MIT
+
 #ifndef PROJECTNAME_CL_UNITNAME_H
 #define PROJECTNAME_CL_UNITNAME_H
 

@@ -1,3 +1,5 @@
+SPDX-License-Identifier: MIT
+
 # PROJECT_NAME details for developers
 
 ## Outline

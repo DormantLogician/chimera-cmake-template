@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+
 set(BINARY_NAME lib_target)
 
 add_library(${BINARY_NAME}

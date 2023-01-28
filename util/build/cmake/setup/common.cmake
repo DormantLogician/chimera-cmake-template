@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+
 # Add some default compiler and linker flags to 'TARGET' based on chosen compiler and CMake configuration.
 # Use this function on any new app and library targets internal to project.
 function(setupFlags TARGET)
