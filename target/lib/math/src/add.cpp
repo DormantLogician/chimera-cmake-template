@@ -1,5 +1,3 @@
-// SPDX-License-Identifier: MIT
-
 #include "math/add.h"
 
 namespace math

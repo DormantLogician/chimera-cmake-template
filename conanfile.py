@@ -1,5 +1,3 @@
-# SPDX-License-Identifier: MIT
-
 from conans import ConanFile
 
 class ConfigConan(ConanFile):

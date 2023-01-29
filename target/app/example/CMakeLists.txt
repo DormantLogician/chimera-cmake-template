@@ -1,5 +1,3 @@
-# SPDX-License-Identifier: MIT
-
 set(BINARY_NAME example)
 
 add_executable(${BINARY_NAME}

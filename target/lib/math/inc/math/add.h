@@ -1,5 +1,3 @@
-// SPDX-License-Identifier: MIT
-
 #ifndef F_ADD_H
 #define F_ADD_H
 
