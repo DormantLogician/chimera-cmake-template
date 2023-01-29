@@ -14,11 +14,12 @@ A CMake project template that uses Conan, Clang Tidy, and Boost Test.
 - .git - Contains git configuration and commit history.
 
 ### Files
-- BREIF.md - Contains info on what project is, and how to build project.
 - CMakeLists.txt - CMake configuration file for the root directory of project.
 - CMakePresets.json - CMake configuration file that sets compiler and genererator depending on configuration.
 - conanfile.py - Configuration file used to tell Conan which packages to get for project.
 - DETAIL.md - Describes details about the project's structure, preparation work that was done before project was started and what is currently being anticipated.
+- LICENSE.txt - Describes permissions granted to others so they can use your software.
+- README.md - Contains info on what project is, and how to build project.
 - .clang-format - Configuration for Clang Format code formatter.
 - .clang-tidy - Configuration for Clang Tidy static analyzer.
 - .editorconfig - Configuration file recognized by certain editors which defines project-wide settings.
