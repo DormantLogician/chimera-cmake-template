@@ -1,5 +1,3 @@
-# SPDX-License-Identifier: MIT
-
 set(BINARY_NAME app_target)
 
 add_executable(${BINARY_NAME}

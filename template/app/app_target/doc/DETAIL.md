@@ -1,5 +1,3 @@
-SPDX-License-Identifier: MIT
-
 # APP_NAME details for developers
 
 ## Outline

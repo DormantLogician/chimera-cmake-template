@@ -1,5 +1,3 @@
-# SPDX-License-Identifier: MIT
-
 set(BINARY_NAME math)
 
 add_library(${BINARY_NAME}

@@ -1,5 +1,3 @@
-# SPDX-License-Identifier: MIT
-
 set(SUITE_NAME specs_add)
 set(SUITE_TARGET ${BINARY_NAME}_${SUITE_NAME})
 

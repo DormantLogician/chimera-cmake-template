@@ -1,5 +1,3 @@
-SPDX-License-Identifier: MIT
-
 # PROJECT_NAME
 ### Description
 
