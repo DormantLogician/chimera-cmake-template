@@ -46,7 +46,7 @@
             "name": "testaddr",
             "inherits": "release",
             "displayName": "TestAddr",
-            "description": "Clang with Ninja generator set to TestAddr mode (Address sanitizer)..",
+            "description": "Clang with Ninja generator set to TestAddr mode (Address sanitizer).",
             "cacheVariables":
             {
                 "CMAKE_BUILD_TYPE": "TestAddr",
@@ -105,10 +105,10 @@
             "name": "testmem",
             "inherits": "testaddr",
             "configurePreset": "testmem"
-        }
+        },
         {
             "name": "release",
-            "inherits": "test",
+            "inherits": "testaddr",
             "configurePreset": "release"
         }
     ]
