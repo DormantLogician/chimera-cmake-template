@@ -43,13 +43,24 @@
             }
         },
         {
-            "name": "test",
+            "name": "testaddr",
             "inherits": "release",
-            "displayName": "Test",
-            "description": "Clang with Ninja generator set to Testing mode.",
+            "displayName": "TestAddr",
+            "description": "Clang with Ninja generator set to TestAddr mode (Address sanitizer)..",
             "cacheVariables":
             {
-                "CMAKE_BUILD_TYPE": "Test",
+                "CMAKE_BUILD_TYPE": "TestAddr",
+                "CMAKE_CXX_COMPILER": "clang++"
+            }
+        },
+        {
+            "name": "testmem",
+            "inherits": "release",
+            "displayName": "TestMem",
+            "description": "Clang with Ninja generator set to TestMem mode (Memory sanitizer).",
+            "cacheVariables":
+            {
+                "CMAKE_BUILD_TYPE": "TestMem",
                 "CMAKE_CXX_COMPILER": "clang++"
             }
         }
