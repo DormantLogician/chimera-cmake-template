@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(Example LANGUAGES CXX)
+project(Example 
+    LANGUAGES CXX
+    DESCRIPTION "Put description of project here."
+    VERSION 1
+)
 
 set(SETUP_DIR ${CMAKE_CURRENT_SOURCE_DIR}/util/build/cmake/setup) # Directory used by this CMake configuartion for setup-related includes.
 
