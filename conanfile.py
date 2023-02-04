@@ -2,7 +2,7 @@ from conans import ConanFile
 
 class ConfigConan(ConanFile):
     name = "example"
-    version = "0.0.1"
+    version = "v1"
     license = "MIT"
     description = """Put description of project here if publishing."""
     settings = "os", "compiler", "build_type", "arch"
