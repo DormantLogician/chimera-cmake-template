@@ -2,6 +2,8 @@ set(BINARY_NAME math)
 
 add_library(${BINARY_NAME}
     src/add.cpp
+    
+    inc/${BINARY_NAME}/add.h
 )
 
 setupFlags(${BINARY_NAME})
