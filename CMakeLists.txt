@@ -20,7 +20,7 @@ set(TARGET_DIR ${CMAKE_CURRENT_SOURCE_DIR}/target)
 add_subdirectory(${TARGET_DIR}/lib/math)
 add_subdirectory(${TARGET_DIR}/app/example)
 
-install(FILES LICENSE.txt DESTINATION ${CMAKE_INSTALL_DOCDIR} RENAME copyright)
+install(FILES LICENSE.txt DESTINATION ${CMAKE_INSTALL_DOCDIR})
 
 # Enable binary and source packaging targets (for certain generators).
 include(CPack)
