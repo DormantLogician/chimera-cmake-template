@@ -10,8 +10,8 @@ set(SETUP_DIR ${CMAKE_CURRENT_SOURCE_DIR}/util/build/cmake/setup) # Directory us
 
 include(${SETUP_DIR}/setup.cmake) # Perform general configuration related to project before continuing.
 include(${SETUP_DIR}/common.cmake) # Define functions that are used later.
-include(${SETUP_DIR}/deps.cmake)
-include(${SETUP_DIR}/linting.cmake) # Deps not included in linting because they are retrieved above.
+include(${SETUP_DIR}/dep.cmake)
+include(${SETUP_DIR}/program.cmake) # Deps not included in linting because they are retrieved above.
 include(${SETUP_DIR}/packing.cmake) # Configure CPack so we can package our binaries and sources.
 
 # Add project's targets to build.
