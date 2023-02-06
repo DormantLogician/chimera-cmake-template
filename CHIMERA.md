@@ -5,10 +5,10 @@ A CMake project template that uses Conan, Clang Tidy, and Boost Test.
 ### Features
 - Templates for app, library, and subsystem targets.
 - Testing (sanitizer) and profiling build types.
-- In-source builds are disabled.
 
 ### Folders
 - target - Contains local targets to build related to this project.
+- task - Contains 'todo' list items.
 - template - Contains boilerplate structures that are filled in to make new targets.
 - util - Contains scripts and/or programs that are used help build, maintain, or package the project.
 - .git - Contains git configuration and commit history.
