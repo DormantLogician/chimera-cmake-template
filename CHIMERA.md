@@ -10,6 +10,7 @@ A CMake project template that uses Conan, Clang Tidy, and Boost Test.
 - target - Contains local targets to build related to this project.
 - task - Contains 'todo' list items.
 - template - Contains boilerplate structures that are filled in to make new targets.
+- test_package - Contains a Conan recipe that is used to test if our Conan package can be used.
 - util - Contains scripts and/or programs that are used help build, maintain, or package the project.
 - .git - Contains git configuration and commit history.
 

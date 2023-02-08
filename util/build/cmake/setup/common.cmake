@@ -71,7 +71,7 @@ function(makeTest TEST_NAME TEST_SOURCE)
                     "$<$<CONFIG:Valgrind>:-q>" "$<$<CONFIG:Valgrind>:--error-exitcode=1>"
                     "$<$<CONFIG:Valgrind>:--exit-on-first-error=yes>"
                     "$<$<CONFIG:Valgrind>:--track-origins=yes>"
-                    "$<$<CONFIG:Valgrind>:--exit-on-first-error=yes>" "$<$<CONFIG:Valgrind>:$<TARGET_FILE:${TEST_NAME}>>"
+                    "$<$<CONFIG:Valgrind>:$<TARGET_FILE:${TEST_NAME}>>"
         )
     endif()
 endfunction()

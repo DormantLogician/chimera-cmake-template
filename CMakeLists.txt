@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(Example 
+project(Math 
     LANGUAGES CXX
-    DESCRIPTION "Put description of project here."
-    VERSION 1
+    DESCRIPTION "Example library included in Chimera CMake project template."
+    VERSION 1.0
 )
 
 set(SETUP_DIR ${CMAKE_CURRENT_SOURCE_DIR}/util/build/cmake/setup) # Directory used by this CMake configuartion for setup-related includes.
@@ -18,7 +18,6 @@ include(${SETUP_DIR}/packing.cmake) # Configure CPack so we can package our bina
 set(TARGET_DIR ${CMAKE_CURRENT_SOURCE_DIR}/target)
 
 add_subdirectory(${TARGET_DIR}/lib/math)
-add_subdirectory(${TARGET_DIR}/app/example)
 
 install(FILES LICENSE.txt DESTINATION ${CMAKE_INSTALL_DOCDIR})
 

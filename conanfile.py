@@ -1,10 +1,28 @@
-from conans import ConanFile
+from conans import ConanFile, CMake
 
 class ConfigConan(ConanFile):
-    name = "example"
-    version = "v1"
+    name = "math"
+    version = "1.0"
+    author = "Stephen Aaron Hannon <hannonstephen19@gmail.com>"
     license = "MIT"
-    description = """Put description of project here if publishing."""
+    description = """Example library included in Chimera CMake project template."""
+
+    generators = "cmake_find_package"
     settings = "os", "compiler", "build_type", "arch"
     tool_requires = "boost/1.81.0"
-    generators = "cmake_find_package"
+    upload_policy = "skip"
+
+    exports_sources = "CMakeLists.txt", "CMakePresets.json", "LICENSE.txt", "target/*", "util/*"
+
+    def build(self):
+        cmake = CMake(self)
+        cmake.configure()
+        cmake.build()
+        cmake.test()
+
+    def package(self):
+        cmake = CMake(self)
+        cmake.install()
+
+    def package_info(self):
+        self.cpp_info.libs = ["math"]
