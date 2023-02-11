@@ -107,6 +107,11 @@
             "configurePreset": "release"
         },
         {
+            "name": "debug",
+            "inherits": "test",
+            "configurePreset": "debug"
+        },
+        {
             "name": "coverage",
             "inherits": "test",
             "configurePreset": "coverage"
