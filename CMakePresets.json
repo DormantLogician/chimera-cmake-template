@@ -9,17 +9,6 @@
     "configurePresets":
     [
         {
-            "name": "multi",
-            "displayName": "Multi",
-            "description": "GCC with Ninja Multi-config generator.",
-            "generator": "Ninja Multi-Config",
-            "binaryDir": "${sourceDir}/built/multi",
-            "cacheVariables":
-            {
-                "CMAKE_CXX_COMPILER": "g++"
-            }
-        },
-        {
             "name": "release",
             "displayName": "Release",
             "description": "GCC with Ninja generator set to release mode.",
@@ -68,11 +57,6 @@
     "buildPresets":
     [
         {
-            "name": "multi",
-            "configurePreset": "multi",
-            "jobs": 4
-        },
-        {
             "name": "release",
             "configurePreset": "release",
             "jobs": 4
@@ -96,24 +80,19 @@
     "testPresets":
     [
         {
-            "name": "multi",
-            "configurePreset": "multi",
+            "name": "release",
+            "configurePreset": "release",
             "output": {"outputOnFailure": true},
             "execution": {"noTestsAction": "error", "stopOnFailure": true, "jobs": 4}
         },
         {
-            "name": "release",
-            "inherits": "multi",
-            "configurePreset": "release"
-        },
-        {
             "name": "debug",
-            "inherits": "multi",
+            "inherits": "release",
             "configurePreset": "debug"
         },
         {
             "name": "coverage",
-            "inherits": "multi",
+            "inherits": "release",
             "configurePreset": "coverage"
         }
     ]
