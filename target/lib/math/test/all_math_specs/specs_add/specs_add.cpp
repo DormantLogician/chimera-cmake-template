@@ -1,48 +1,53 @@
 #include <boost/test/unit_test.hpp>
+#include <boost/test/data/test_case.hpp>
+#include <boost/test/data/monomorphic.hpp>
+
+#include <vector>
+#include <limits>
 
 #include "math/add.h"
 
+namespace bdata = boost::unit_test::data;
+
+std::vector<long long> get_dataset()
+{
+    return {
+        std::numeric_limits<long long>::min(),
+        -10,
+        -9,
+        -8,
+        -7,
+        -6,
+        -5,
+        -4,
+        -3,
+        -2,
+        -1,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        std::numeric_limits<long long>::max(),
+    };
+};
 
 BOOST_AUTO_TEST_SUITE(add);
 
-BOOST_AUTO_TEST_CASE(Both_positive)
+BOOST_DATA_TEST_CASE(Data_test_example,
+                     (bdata::make(get_dataset()) * bdata::make(get_dataset())),
+                     first_integer, second_integer)
 {
-    BOOST_CHECK_EQUAL(math::add(3854, 1643), 5497);
-};
-
-BOOST_AUTO_TEST_CASE(Both_negative)
-{
-    BOOST_CHECK_EQUAL(math::add(-12000, -340000), -352000);
-};
-
-BOOST_AUTO_TEST_CASE(Positive_then_negative)
-{
-    BOOST_CHECK_EQUAL(math::add(200000, -10000), 190000);
-};
-
-BOOST_AUTO_TEST_CASE(Negative_then_positive)
-{
-    BOOST_CHECK_EQUAL(math::add(-42000, 27000), -15000);
-};
-
-BOOST_AUTO_TEST_CASE(Both_zero)
-{
-    BOOST_CHECK_EQUAL(math::add(0, 0), 0);
-};
-
-BOOST_AUTO_TEST_CASE(Both_one)
-{
-    BOOST_CHECK_EQUAL(math::add(1, 1), 2);
-};
-
-BOOST_AUTO_TEST_CASE(Zero_then_one)
-{
-    BOOST_CHECK_EQUAL(math::add(0, 1), 1);
-};
-
-BOOST_AUTO_TEST_CASE(One_then_zero)
-{
-    BOOST_CHECK_EQUAL(math::add(1, 0), 1);
+    BOOST_TEST_INFO_SCOPE("OUTPUT: " << math::add(first_integer, second_integer) << "\n");
+    BOOST_CHECK_EQUAL((math::add(first_integer, second_integer) - second_integer), first_integer);
+    BOOST_CHECK_EQUAL((math::add(first_integer, second_integer) - first_integer), second_integer);
+    BOOST_CHECK_EQUAL(math::add(first_integer, second_integer), math::add(second_integer, first_integer));
 };
 
 BOOST_AUTO_TEST_SUITE_END();
