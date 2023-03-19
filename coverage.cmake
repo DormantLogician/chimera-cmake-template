@@ -13,17 +13,17 @@ if (NOT CTEST_EXE)
 endif()
 
 
-set(BUILT_DIR built)
-set(MULTI_PRESET multi)
+set(BUILT_DIR built/single)
+set(COVERAGE_PRESET coverage)
 
 message(STATUS "Run Conan...")
-file(MAKE_DIRECTORY ${BUILT_DIR}/${MULTI_PRESET})
-execute_process(COMMAND ${CONAN_EXE} install ../.. WORKING_DIRECTORY ${BUILT_DIR}/${MULTI_PRESET} OUTPUT_QUIET COMMAND_ERROR_IS_FATAL ANY)
+file(MAKE_DIRECTORY ${BUILT_DIR})
+execute_process(COMMAND ${CONAN_EXE} install ../.. WORKING_DIRECTORY ${BUILT_DIR} OUTPUT_QUIET COMMAND_ERROR_IS_FATAL ANY)
 
 message(STATUS "Configure CMake project...")
-execute_process(COMMAND ${CMAKE_COMMAND} --preset ${MULTI_PRESET} OUTPUT_QUIET COMMAND_ERROR_IS_FATAL ANY)
+execute_process(COMMAND ${CMAKE_COMMAND} --preset ${COVERAGE_PRESET} OUTPUT_QUIET COMMAND_ERROR_IS_FATAL ANY)
 
 message(STATUS "Build and test with code coverage...")
-execute_process(COMMAND ${CMAKE_COMMAND} --build --preset ${MULTI_PRESET} --config Coverage COMMAND_ERROR_IS_FATAL ANY)
-execute_process(COMMAND ${CTEST_EXE} --preset ${MULTI_PRESET} -C Coverage COMMAND_ERROR_IS_FATAL ANY)
-execute_process(COMMAND ${CTEST_EXE} -C Coverage -M Experimental -T Coverage WORKING_DIRECTORY ${BUILT_DIR}/${MULTI_PRESET})
+execute_process(COMMAND ${CMAKE_COMMAND} --build --preset ${COVERAGE_PRESET} COMMAND_ERROR_IS_FATAL ANY)
+execute_process(COMMAND ${CTEST_EXE} --preset ${COVERAGE_PRESET} COMMAND_ERROR_IS_FATAL ANY)
+execute_process(COMMAND ${CTEST_EXE} -M Experimental -T Coverage WORKING_DIRECTORY ${BUILT_DIR})
