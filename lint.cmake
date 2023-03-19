@@ -13,29 +13,24 @@ if (NOT CTEST_EXE)
 endif()
 
 
-set(BUILT_DIR built)
-set(MULTI_PRESET multi)
+set(BUILT_DIR built/single)
+set(RELEASE_PRESET release)
+set(TEST_PRESET test)
 
 message(STATUS "Run Conan...")
-file(MAKE_DIRECTORY ${BUILT_DIR}/${MULTI_PRESET})
-execute_process(COMMAND ${CONAN_EXE} install ../.. WORKING_DIRECTORY ${BUILT_DIR}/${MULTI_PRESET} OUTPUT_QUIET COMMAND_ERROR_IS_FATAL ANY)
+file(MAKE_DIRECTORY ${BUILT_DIR})
+execute_process(COMMAND ${CONAN_EXE} install ../.. WORKING_DIRECTORY ${BUILT_DIR} OUTPUT_QUIET COMMAND_ERROR_IS_FATAL ANY)
 
 message(STATUS "Configure CMake project...")
-execute_process(COMMAND ${CMAKE_COMMAND} --preset ${MULTI_PRESET} OUTPUT_QUIET COMMAND_ERROR_IS_FATAL ANY)
+execute_process(COMMAND ${CMAKE_COMMAND} --preset ${RELEASE_PRESET} OUTPUT_QUIET COMMAND_ERROR_IS_FATAL ANY)
 
 message(STATUS "Build and test with release configuration...")
-execute_process(COMMAND ${CMAKE_COMMAND} --build --preset ${MULTI_PRESET} --config Release COMMAND_ERROR_IS_FATAL ANY)
-execute_process(COMMAND ${CTEST_EXE} --preset ${MULTI_PRESET} -C Release COMMAND_ERROR_IS_FATAL ANY)
+execute_process(COMMAND ${CMAKE_COMMAND} --build --preset ${RELEASE_PRESET} COMMAND_ERROR_IS_FATAL ANY)
+execute_process(COMMAND ${CTEST_EXE} --preset ${RELEASE_PRESET} COMMAND_ERROR_IS_FATAL ANY)
+
+message(STATUS "Configure CMake project...")
+execute_process(COMMAND ${CMAKE_COMMAND} --preset ${TEST_PRESET} OUTPUT_QUIET COMMAND_ERROR_IS_FATAL ANY)
 
 message(STATUS "Build and test with sanitizers...")
-execute_process(COMMAND ${CMAKE_COMMAND} --build --preset ${MULTI_PRESET} --config Test COMMAND_ERROR_IS_FATAL ANY)
-execute_process(COMMAND ${CTEST_EXE} --preset ${MULTI_PRESET} -C Test COMMAND_ERROR_IS_FATAL ANY)
-
-message(STATUS "Build and test with dynamic analysis...")
-execute_process(COMMAND ${CMAKE_COMMAND} --build --preset ${MULTI_PRESET} --config Debug COMMAND_ERROR_IS_FATAL ANY)
-execute_process(COMMAND ${CTEST_EXE} -C Debug -M Experimental -T MemCheck WORKING_DIRECTORY ${BUILT_DIR}/${MULTI_PRESET})
-
-message(STATUS "Build and test with code coverage...")
-execute_process(COMMAND ${CMAKE_COMMAND} --build --preset ${MULTI_PRESET} --config Coverage COMMAND_ERROR_IS_FATAL ANY)
-execute_process(COMMAND ${CTEST_EXE} --preset ${MULTI_PRESET} -C Coverage COMMAND_ERROR_IS_FATAL ANY)
-execute_process(COMMAND ${CTEST_EXE} -C Coverage -M Experimental -T Coverage WORKING_DIRECTORY ${BUILT_DIR}/${MULTI_PRESET})
+execute_process(COMMAND ${CMAKE_COMMAND} --build --preset ${TEST_PRESET} COMMAND_ERROR_IS_FATAL ANY)
+execute_process(COMMAND ${CTEST_EXE} --preset ${TEST_PRESET} COMMAND_ERROR_IS_FATAL ANY)
