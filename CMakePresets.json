@@ -32,6 +32,17 @@
             }
         },
         {
+            "name": "test",
+            "inherits": "release",
+            "displayName": "Test",
+            "description": "GCC with Ninja generator set to testing (sanitizer) mode.",
+            "cacheVariables":
+            {
+                "CMAKE_BUILD_TYPE": "Test",
+                "CMAKE_CXX_COMPILER": "g++"
+            }
+        },
+        {
             "name": "profile",
             "inherits": "release",
             "displayName": "Profile",
@@ -67,6 +78,11 @@
             "jobs": 4
         },
         {
+            "name": "test",
+            "configurePreset": "test",
+            "jobs": 4
+        },
+        {
             "name": "profile",
             "configurePreset": "profile",
             "jobs": 4
@@ -89,6 +105,11 @@
             "name": "debug",
             "inherits": "release",
             "configurePreset": "debug"
+        },
+        {
+            "name": "test",
+            "inherits": "release",
+            "configurePreset": "test"
         },
         {
             "name": "coverage",
