@@ -9,22 +9,11 @@
     "configurePresets":
     [
         {
-            "name": "eclipse",
-            "displayName": "Eclipse",
-            "description": "GCC with Eclipse CDT generator.",
-            "generator": "Eclipse CDT4 - Ninja",
-            "binaryDir": "../built/single",
-            "cacheVariables":
-            {
-                "CMAKE_CXX_COMPILER": "g++"
-            }
-        },
-        {
             "name": "release",
             "displayName": "Release",
             "description": "GCC with Ninja generator set to release mode.",
             "generator": "Ninja",
-            "binaryDir": "../built/single",
+            "binaryDir": "${sourceDir}/built/single",
             "cacheVariables":
             {
                 "CMAKE_BUILD_TYPE": "Release",
