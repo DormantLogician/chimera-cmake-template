@@ -1,0 +1,131 @@
+{
+    "version": 2,
+    "cmakeMinimumRequired":
+    {
+        "major": 3,
+        "minor": 20,
+        "patch": 0
+    },
+    "configurePresets":
+    [
+        {
+            "name": "eclipse",
+            "displayName": "Eclipse",
+            "description": "GCC with Eclipse CDT generator.",
+            "generator": "Eclipse CDT4 - Ninja",
+            "binaryDir": "../built/single",
+            "cacheVariables":
+            {
+                "CMAKE_CXX_COMPILER": "g++"
+            }
+        },
+        {
+            "name": "release",
+            "displayName": "Release",
+            "description": "GCC with Ninja generator set to release mode.",
+            "generator": "Ninja",
+            "binaryDir": "../built/single",
+            "cacheVariables":
+            {
+                "CMAKE_BUILD_TYPE": "Release",
+                "CMAKE_CXX_COMPILER": "g++"
+            }
+        },
+        {
+            "name": "debug",
+            "inherits": "release",
+            "displayName": "Debug",
+            "description": "GCC with Ninja generator set to debug mode.",
+            "cacheVariables":
+            {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_CXX_COMPILER": "g++"
+            }
+        },
+        {
+            "name": "test",
+            "inherits": "release",
+            "displayName": "Test",
+            "description": "GCC with Ninja generator set to testing (sanitizer) mode.",
+            "cacheVariables":
+            {
+                "CMAKE_BUILD_TYPE": "Test",
+                "CMAKE_CXX_COMPILER": "g++"
+            }
+        },
+        {
+            "name": "profile",
+            "inherits": "release",
+            "displayName": "Profile",
+            "description": "GCC with Ninja generator set to profiling mode.",
+            "cacheVariables":
+            {
+                "CMAKE_BUILD_TYPE": "Profile",
+                "CMAKE_CXX_COMPILER": "g++"
+            }
+        },
+        {
+            "name": "coverage",
+            "inherits": "release",
+            "displayName": "Coverage",
+            "description": "GCC with Ninja generator set to test code coverage mode.",
+            "cacheVariables":
+            {
+                "CMAKE_BUILD_TYPE": "Coverage",
+                "CMAKE_CXX_COMPILER": "g++"
+            }
+        }
+    ],
+    "buildPresets":
+    [
+        {
+            "name": "release",
+            "configurePreset": "release",
+            "jobs": 4
+        },
+        {
+            "name": "debug",
+            "configurePreset": "debug",
+            "jobs": 4
+        },
+        {
+            "name": "test",
+            "configurePreset": "test",
+            "jobs": 4
+        },
+        {
+            "name": "profile",
+            "configurePreset": "profile",
+            "jobs": 4
+        },
+        {
+            "name": "coverage",
+            "configurePreset": "coverage",
+            "jobs": 4
+        }
+    ],
+    "testPresets":
+    [
+        {
+            "name": "release",
+            "configurePreset": "release",
+            "output": {"outputOnFailure": true},
+            "execution": {"noTestsAction": "error", "stopOnFailure": true, "jobs": 4}
+        },
+        {
+            "name": "debug",
+            "inherits": "release",
+            "configurePreset": "debug"
+        },
+        {
+            "name": "test",
+            "inherits": "release",
+            "configurePreset": "test"
+        },
+        {
+            "name": "coverage",
+            "inherits": "release",
+            "configurePreset": "coverage"
+        }
+    ]
+}
