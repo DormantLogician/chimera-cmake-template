@@ -8,7 +8,7 @@ BOOST_AUTO_TEST_SUITE(unitname_fn);
 
 BOOST_AUTO_TEST_CASE(First_spec_description)
 {
-    BOOST_TEST(false);
+    BOOST_FAIL("Incomplete test case.");
 };
 
 BOOST_AUTO_TEST_SUITE_END();
