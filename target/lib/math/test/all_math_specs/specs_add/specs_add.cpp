@@ -1,53 +1,126 @@
 #include <boost/test/unit_test.hpp>
-#include <boost/test/data/test_case.hpp>
-#include <boost/test/data/monomorphic.hpp>
-
-#include <vector>
-#include <limits>
+#include <array>
 
 #include "math/add.h"
 
-namespace bdata = boost::unit_test::data;
-
-std::vector<long long> get_dataset()
-{
-    return {
-        std::numeric_limits<long long>::min(),
-        -10,
-        -9,
-        -8,
-        -7,
-        -6,
-        -5,
-        -4,
-        -3,
-        -2,
-        -1,
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        std::numeric_limits<long long>::max(),
-    };
-};
-
 BOOST_AUTO_TEST_SUITE(add);
 
-BOOST_DATA_TEST_CASE(Data_test_example,
-                     (bdata::make(get_dataset()) * bdata::make(get_dataset())),
-                     first_integer, second_integer)
+enum class Situation
 {
-    BOOST_TEST_INFO_SCOPE("OUTPUT: " << math::add(first_integer, second_integer) << "\n");
-    BOOST_CHECK_EQUAL((math::add(first_integer, second_integer) - second_integer), first_integer);
-    BOOST_CHECK_EQUAL((math::add(first_integer, second_integer) - first_integer), second_integer);
-    BOOST_CHECK_EQUAL(math::add(first_integer, second_integer), math::add(second_integer, first_integer));
+    Greater_left_argument,
+    Left_argument_is_zero,
+    Right_argument_is_zero,
+    Has_negative_numbers,
+    Has_positive_numbers
+};
+
+BOOST_AUTO_TEST_CASE(test_case_1)
+{
+    constexpr std::array sit{
+        Situation::Left_argument_is_zero,
+        Situation::Right_argument_is_zero
+    };
+
+    BOOST_CHECK_EQUAL(math::add(0, 0), 0);
+};
+
+BOOST_AUTO_TEST_CASE(test_case_2)
+{
+    constexpr std::array sit{
+        Situation::Left_argument_is_zero,
+        Situation::Has_negative_numbers
+    };
+
+    BOOST_CHECK_EQUAL(math::add(0, -1), -1);
+};
+
+BOOST_AUTO_TEST_CASE(test_case_3)
+{
+    constexpr std::array sit{
+        Situation::Left_argument_is_zero,
+        Situation::Has_positive_numbers
+    };
+
+    BOOST_CHECK_EQUAL(math::add(0, 2), 2);
+};
+
+BOOST_AUTO_TEST_CASE(test_case_4)
+{
+    constexpr std::array sit{
+        Situation::Right_argument_is_zero,
+        Situation::Has_negative_numbers
+    };
+
+    BOOST_CHECK_EQUAL(math::add(-1, 0), -1);
+};
+
+BOOST_AUTO_TEST_CASE(test_case_5)
+{
+    constexpr std::array sit{
+        Situation::Right_argument_is_zero,
+        Situation::Has_positive_numbers
+    };
+
+    BOOST_CHECK_EQUAL(math::add(2, 0), 2);
+};
+
+BOOST_AUTO_TEST_CASE(test_case_6)
+{
+    constexpr std::array sit{
+        Situation::Has_negative_numbers,
+        Situation::Has_positive_numbers
+    };
+
+    BOOST_CHECK_EQUAL(math::add(-2, 3), 1);
+};
+
+BOOST_AUTO_TEST_CASE(test_case_7)
+{
+    constexpr std::array sit{
+        Situation::Greater_left_argument,
+        Situation::Has_negative_numbers,
+        Situation::Has_positive_numbers
+    };
+
+    BOOST_CHECK_EQUAL(math::add(3, -2), 1);
+};
+
+BOOST_AUTO_TEST_CASE(test_case_8)
+{
+    constexpr std::array sit{
+        Situation::Greater_left_argument,
+        Situation::Has_negative_numbers
+    };
+
+    BOOST_CHECK_EQUAL(math::add(-3, -4), -7);
+};
+
+BOOST_AUTO_TEST_CASE(test_case_9)
+{
+    constexpr std::array sit{
+        Situation::Has_negative_numbers
+    };
+
+    BOOST_CHECK_EQUAL(math::add(-4, -3), -7);
+};
+
+BOOST_AUTO_TEST_CASE(test_case_10)
+{
+    constexpr std::array sit{
+        Situation::Has_positive_numbers
+    };
+
+    BOOST_CHECK_EQUAL(math::add(3, 4), 7);
+};
+
+BOOST_AUTO_TEST_CASE(test_case_11)
+{
+    constexpr std::array sit{
+        Situation::Greater_left_argument,
+        Situation::Has_positive_numbers
+    };
+
+    BOOST_CHECK_EQUAL(math::add(4, 3), 7);
 };
 
 BOOST_AUTO_TEST_SUITE_END();
