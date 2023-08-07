@@ -5,8 +5,6 @@
 
 ### Required tooling
 
-### What users can do with software
-
 ### Potential development roadblocks
 
 ### Safety considerations
