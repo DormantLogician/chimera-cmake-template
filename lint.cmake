@@ -14,7 +14,7 @@ endif()
 
 
 set(BUILT_DIR built/single)
-set(RELEASE_PRESET release)
+set(DEBUG_PRESET debug)
 set(TEST_PRESET test)
 
 message(STATUS "Run Conan...")
@@ -22,15 +22,15 @@ file(MAKE_DIRECTORY ${BUILT_DIR})
 execute_process(COMMAND ${CONAN_EXE} install ../.. WORKING_DIRECTORY ${BUILT_DIR} OUTPUT_QUIET COMMAND_ERROR_IS_FATAL ANY)
 
 message(STATUS "Configure CMake project...")
-execute_process(COMMAND ${CMAKE_COMMAND} --preset ${RELEASE_PRESET} OUTPUT_QUIET COMMAND_ERROR_IS_FATAL ANY)
-
-message(STATUS "Build and test with release configuration...")
-execute_process(COMMAND ${CMAKE_COMMAND} --build --preset ${RELEASE_PRESET} COMMAND_ERROR_IS_FATAL ANY)
-execute_process(COMMAND ${CTEST_EXE} --preset ${RELEASE_PRESET} COMMAND_ERROR_IS_FATAL ANY)
-
-message(STATUS "Configure CMake project...")
 execute_process(COMMAND ${CMAKE_COMMAND} --preset ${TEST_PRESET} OUTPUT_QUIET COMMAND_ERROR_IS_FATAL ANY)
 
 message(STATUS "Build and test with sanitizers...")
 execute_process(COMMAND ${CMAKE_COMMAND} --build --preset ${TEST_PRESET} COMMAND_ERROR_IS_FATAL ANY)
 execute_process(COMMAND ${CTEST_EXE} --preset ${TEST_PRESET} COMMAND_ERROR_IS_FATAL ANY)
+
+message(STATUS "Configure CMake project...")
+execute_process(COMMAND ${CMAKE_COMMAND} --preset ${DEBUG_PRESET} OUTPUT_QUIET COMMAND_ERROR_IS_FATAL ANY)
+
+message(STATUS "Build and test with memory checker...")
+execute_process(COMMAND ${CMAKE_COMMAND} --build --preset ${DEBUG_PRESET} COMMAND_ERROR_IS_FATAL ANY)
+execute_process(COMMAND ${CTEST_EXE} -M Experimental -T MemCheck WORKING_DIRECTORY ${BUILT_DIR})
