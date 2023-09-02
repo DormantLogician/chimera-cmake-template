@@ -10,7 +10,7 @@ A CMake project template that uses Conan, Clang Tidy, and Boost Test.
 - target - Contains local targets to build related to this project.
 - doc - Contains project documentation and 'todo' list items.
 - template - Contains boilerplate structures that are filled in to make new targets.
-- test_package - Contains a Conan recipe that is used to test if our Conan package can be used.
+- test_package - Contains a Conan recipe that is used to test if our Conan package can be consumed by our users.
 - util - Contains scripts and/or programs that are used help build, maintain, or package the project.
 - .git - Contains git configuration and commit history.
 
@@ -18,10 +18,8 @@ A CMake project template that uses Conan, Clang Tidy, and Boost Test.
 - CMakeLists.txt - CMake configuration file for the root directory of project.
 - CMakePresets.json - CMake configuration file that sets compiler and genererator depending on configuration.
 - conanfile.py - Configuration file used to tell Conan which packages to get for project.
-- coverage.cmake - Executable CMake script used for displaying code coverage results.
 - DETAIL.md - Describes details about the project's structure, preparation work that was done before project was started and what is currently being anticipated.
 - LICENSE.txt - Describes permissions granted to others so they can use your software.
-- lint.cmake - Executable CMake script used to run sanitizers and memory checkers.
 - README.md - Contains info on what project is, and how to build project.
 - .clang-tidy - Configuration for Clang Tidy static analyzer.
 - .editorconfig - Configuration file recognized by certain editors which defines project-wide settings.
