@@ -2,16 +2,14 @@ set(BINARY_NAME math)
 
 add_library(${BINARY_NAME}
     src/add.cpp
-    
     inc/${BINARY_NAME}/add.h
 )
 
-set_target_properties(${BINARY_NAME} PROPERTIES PUBLIC_HEADER inc/${BINARY_NAME}/add.h)
-
-install(TARGETS ${BINARY_NAME} RUNTIME DESTINATION ${CMAKE_INSTALL_LIBDIR})
+install(TARGETS ${BINARY_NAME} ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR} COMPONENT app)
 install(FILES
     inc/${BINARY_NAME}/add.h
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${BINARY_NAME}
+    COMPONENT app
 )
 
 setupFlags(${BINARY_NAME})
