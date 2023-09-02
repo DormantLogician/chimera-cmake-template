@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(Math 
+project(ChimeraExample 
     LANGUAGES CXX
-    DESCRIPTION "Example library included in Chimera CMake project template."
+    DESCRIPTION "Example application and library included in Chimera CMake project template."
     VERSION 1.0
 )
 
@@ -18,8 +18,9 @@ set(TARGET_DIR target)
 
 # Add project's targets to build.
 add_subdirectory(${TARGET_DIR}/lib/math)
+add_subdirectory(${TARGET_DIR}/app/example)
 
-install(FILES LICENSE.txt DESTINATION ${CMAKE_INSTALL_DOCDIR})
+install(FILES LICENSE.txt DESTINATION ${CMAKE_INSTALL_DOCDIR} COMPONENT app)
 
 # Enable binary and source packaging targets (for certain generators).
 include(CPack)
