@@ -1,11 +1,11 @@
 from conans import ConanFile, CMake
 
 class ConfigConan(ConanFile):
-    name = "math"
+    name = "chimera-example"
     version = "1.0"
     author = "Stephen Aaron Hannon <hannonstephen19@gmail.com>"
     license = "MIT"
-    description = """Example library included in Chimera CMake project template."""
+    description = """Example application and library included in Chimera CMake project template."""
 
     generators = "cmake_find_package"
     settings = "os", "compiler", "build_type", "arch"
