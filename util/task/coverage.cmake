@@ -12,7 +12,6 @@ if (NOT CTEST_EXE)
     )
 endif()
 
-
 set(BUILT_DIR built/single)
 set(COVERAGE_PRESET coverage)
 
