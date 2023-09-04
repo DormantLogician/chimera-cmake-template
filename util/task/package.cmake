@@ -20,7 +20,7 @@ file(MAKE_DIRECTORY ${BUILT_DIR})
 execute_process(COMMAND ${CONAN_EXE} install ../.. WORKING_DIRECTORY ${BUILT_DIR} OUTPUT_QUIET COMMAND_ERROR_IS_FATAL ANY)
 
 message(STATUS "Configure CMake project...")
-execute_process(COMMAND ${CMAKE_COMMAND} --preset ${RELEASE_PRESET} OUTPUT_QUIET COMMAND_ERROR_IS_FATAL ANY)
+execute_process(COMMAND ${CMAKE_COMMAND} --preset ${RELEASE_PRESET} COMMAND_ERROR_IS_FATAL ANY)
 
 message(STATUS "Build and test in release mode...")
 execute_process(COMMAND ${CMAKE_COMMAND} --build --preset ${RELEASE_PRESET} COMMAND_ERROR_IS_FATAL ANY)
