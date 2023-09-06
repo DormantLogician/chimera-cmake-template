@@ -12,7 +12,6 @@ class ConfigConan(ConanFile):
     upload_policy = "skip"
 
     requires = "boost/1.83.0"
-    tool_requires = "cmake/3.27.4"
     generators = "CMakeDeps"
 
     settings = "os", "compiler", "build_type", "arch"
