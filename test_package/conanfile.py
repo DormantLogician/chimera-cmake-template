@@ -8,8 +8,6 @@ class ConfigTestConan(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
     generators = "CMakeDeps"
 
-    tool_requires = "cmake/3.27.4"
-
     def requirements(self):
         self.requires(self.tested_reference_str)
 
