@@ -1,4 +1,4 @@
-# PROJECT_NAME details for developers
+# TARGET_NAME details for developers
 
 ## Outline
 ### Problem domain research
