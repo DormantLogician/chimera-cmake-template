@@ -7,8 +7,8 @@ A CMake project template that uses Conan, Clang Tidy, and Boost Test.
 - Testing (sanitizer) and profiling build types.
 
 ### Folders
+- doc - Contains project documentation.
 - target - Contains local targets to build related to this project.
-- doc - Contains project documentation and 'todo' list items.
 - template - Contains boilerplate structures that are filled in to make new targets.
 - test_package - Contains a Conan recipe that is used to test if our Conan package can be consumed by our users.
 - util - Contains scripts and/or programs that are used help build, maintain, or package the project.
