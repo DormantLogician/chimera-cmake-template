@@ -19,7 +19,7 @@ set(TEST_PRESET test)
 
 message(STATUS "Run Conan...")
 file(MAKE_DIRECTORY ${BUILT_DIR})
-execute_process(COMMAND ${CONAN_EXE} install ../.. WORKING_DIRECTORY ${BUILT_DIR} OUTPUT_QUIET COMMAND_ERROR_IS_FATAL ANY)
+execute_process(COMMAND ${CONAN_EXE} install . --build=missing COMMAND_ERROR_IS_FATAL ANY)
 
 message(STATUS "Configure CMake project...")
 execute_process(COMMAND ${CMAKE_COMMAND} --preset ${TEST_PRESET} COMMAND_ERROR_IS_FATAL ANY)
