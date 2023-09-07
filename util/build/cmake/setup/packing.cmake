@@ -22,3 +22,5 @@ set(CPACK_DEB_COMPONENT_INSTALL ON)
 set(CPACK_DEBIAN_FILE_NAME DEB-DEFAULT) # Use Debian naming conventions for binary files.
 set(CPACK_DEBIAN_PACKAGE_SECTION utils)
 set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS YES) # Make better dependency list in deb file.
+
+set(CPACK_RPM_COMPONENT_INSTALL ON)
