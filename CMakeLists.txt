@@ -17,8 +17,8 @@ include(${SETUP_DIR}/packing.cmake) # Configure CPack so we can package our bina
 set(TARGET_DIR target)
 
 # Add project's targets to build.
-add_subdirectory(${TARGET_DIR}/lib/math)
-add_subdirectory(${TARGET_DIR}/app/example)
+add_subdirectory(${TARGET_DIR}/Engine)
+add_subdirectory(${TARGET_DIR}/App)
 
 install(FILES LICENSE.txt DESTINATION ${CMAKE_INSTALL_DOCDIR} COMPONENT app)
 
