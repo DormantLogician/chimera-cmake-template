@@ -1,3 +1,3 @@
 # App
 ### Description
-Example subsystem of example system that contains user interfaces.
+Example subsystem that contains user interfaces.
