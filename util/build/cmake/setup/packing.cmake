@@ -12,7 +12,7 @@ set(CPACK_INSTALL_DEFAULT_DIRECTORY_PERMISSIONS # Make sure directory permission
 )
 
 set(CPACK_SOURCE_GENERATOR "ZIP")
-set(CPACK_SOURCE_IGNORE_FILES /built;/build;/test_package/build;/build;/.git;/.vscode;/CMakeUserPresets.json)
+set(CPACK_SOURCE_IGNORE_FILES /built;/test_package/build;/.git;/.vscode;/CMakeUserPresets.json)
 
 set(CPACK_GENERATOR "DEB")
 set(CPACK_DEBIAN_FILE_NAME DEB-DEFAULT) # Use Debian naming conventions for binary files.
