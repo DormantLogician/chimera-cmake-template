@@ -2,13 +2,13 @@ find_program(CONAN_EXE NAMES "conan" DOC "Path to Conan package manager tool.")
 find_program(CTEST_EXE NAMES "ctest" DOC "Path to CTest test runner.")
 
 if (NOT CONAN_EXE)
-    message(WARNING 
+    message(SEND_ERROR 
         "Conan package manager executable not found on system - this is required to get dependencies for the project."
     )
 endif()
 
 if (NOT CTEST_EXE)
-    message(WARNING 
+    message(SEND_ERROR 
         "CTest test runner executable not found on system - this is required to run the project's tests."
     )
 endif()
