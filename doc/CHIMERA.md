@@ -1,4 +1,7 @@
 # Chimera
+## Important notice
+This project is in a beta stage of development - this means that it is NOT ready for production use until this notice is removed.
+
 ### Description
 A CMake project template that uses Conan, Clang Tidy, and Boost Test.
 
