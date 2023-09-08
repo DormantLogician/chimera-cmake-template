@@ -16,16 +16,12 @@ class ConfigConan(ConanFile):
 
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False], "fPIC": [True, False]}
-    default_options = {"shared": False, "fPIC": True}
+    default_options = {"shared": True, "fPIC": False}
 
     exports_sources = "CMakeLists.txt", "CMakePresets.json", "LICENSE.txt", ".clang-tidy", "target/*", "util/*"
 
     def config_options(self):
         if self.settings.os == "Windows":
-            self.options.rm_safe("fPIC")
-
-    def configure(self):
-        if self.options.shared:
             self.options.rm_safe("fPIC")
 
     def generate(self):
@@ -34,15 +30,18 @@ class ConfigConan(ConanFile):
         tc.generate()
 
     def layout(self):
-        self.folders.build = os.path.join("built", "single")
+        self.folders.source = "."
+        self.folders.build = os.path.join("built", self.settings.get_safe("build_type"))
         self.folders.generators = os.path.join(self.folders.build, "generators")
 
     def build(self):
-        self.run("cmake --preset release", cwd=self.source_folder)
-        self.run("cmake --build --preset release", cwd=self.source_folder)
+        # Map CMake configurations to CMake presets so presets can be used with Conan.
+        chosen_preset = self.settings.get_safe("build_type", default="default").lower()
+
+        self.run("cmake --preset %s" % (chosen_preset), cwd=self.source_folder)
+        self.run("cmake --build --preset %s" % (chosen_preset), cwd=self.source_folder)
 
     def package(self):
-        self.run("ctest --preset release", cwd=self.source_folder)
         cmake = CMake(self)
         cmake.install()
 
