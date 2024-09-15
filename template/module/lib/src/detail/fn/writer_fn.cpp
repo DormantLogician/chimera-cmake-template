@@ -1,0 +1,5 @@
+namespace projectname::detail::writer
+{
+
+};
+
