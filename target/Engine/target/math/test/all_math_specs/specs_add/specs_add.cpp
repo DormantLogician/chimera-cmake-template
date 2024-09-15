@@ -1,7 +1,7 @@
 #include <boost/test/unit_test.hpp>
 #include <array>
 
-#include "math/add.h"
+#include "math/public/fn/add.h"
 
 BOOST_AUTO_TEST_SUITE(add);
 
@@ -27,3 +27,4 @@ BOOST_AUTO_TEST_SUITE_END();
 
 
 BOOST_AUTO_TEST_SUITE_END();
+

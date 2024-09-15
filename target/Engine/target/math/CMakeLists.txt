@@ -1,14 +1,14 @@
 set(BINARY_NAME math)
 
 add_library(${BINARY_NAME}
-    src/add.cpp
-    inc/${BINARY_NAME}/add.h
+    src/public/fn/add.cpp
+    inc/${BINARY_NAME}/public/fn/add.h
 )
 
 install(TARGETS ${BINARY_NAME} ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR} COMPONENT app)
 install(FILES
-    inc/${BINARY_NAME}/add.h
-    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${BINARY_NAME}
+    inc/${BINARY_NAME}/public/fn/add.h
+    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${BINARY_NAME}/public/fn
     COMPONENT app
 )
 

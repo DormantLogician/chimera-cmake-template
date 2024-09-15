@@ -1,5 +1,5 @@
 #include <iostream>
-#include "math/add.h"
+#include "math/public/fn/add.h"
 
 int main()
 {
@@ -7,3 +7,4 @@ int main()
 
     return 0;
 };
+
