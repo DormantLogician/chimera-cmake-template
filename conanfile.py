@@ -11,7 +11,7 @@ class ConfigConan(ConanFile):
     description = """Example application and library included in Chimera CMake project template."""
     upload_policy = "skip"
 
-    requires = "boost/1.83.0"
+    requires = "boost/1.83.0", "benchmark/1.9.0"
     generators = "CMakeDeps"
 
     settings = "os", "compiler", "build_type", "arch"
