@@ -1,6 +1,4 @@
 #include <boost/test/unit_test.hpp>
-#include <array>
-
 #include "math/public/fn/add.h"
 
 BOOST_AUTO_TEST_SUITE(add);
