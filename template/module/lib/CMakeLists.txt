@@ -8,8 +8,6 @@ install(TARGETS ${BINARY_NAME} ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR} COMPO
 
 install(FILES
     inc/${BINARY_NAME}/public/fn/fn.h
-    inc/${BINARY_NAME}/public/fn/reader_fn.h
-    inc/${BINARY_NAME}/public/fn/writer_fn.h
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${BINARY_NAME}/public/fn
     COMPONENT lib
 )
