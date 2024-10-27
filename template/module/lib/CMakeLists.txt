@@ -11,7 +11,7 @@ install(FILES
     inc/${BINARY_NAME}/public/fn/reader_fn.h
     inc/${BINARY_NAME}/public/fn/writer_fn.h
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${BINARY_NAME}/public/fn
-    COMPONENT app
+    COMPONENT lib
 )
 
 install(FILES
@@ -31,3 +31,5 @@ target_include_directories(${BINARY_NAME} PUBLIC inc)
 
 # Please fill in (if applicable) test targets as described below.
 # addTestDir(test/all_lib_specs)
+
+

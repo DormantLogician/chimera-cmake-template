@@ -2,3 +2,5 @@ namespace projectname::detail
 {
 
 };
+
+

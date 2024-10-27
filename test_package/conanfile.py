@@ -28,3 +28,5 @@ class ConfigTestConan(ConanFile):
         if can_run(self):
           cmd = os.path.join(self.cpp.build.bindir, "math_conan_package_test")
           self.run(cmd, env="conanrun")
+
+

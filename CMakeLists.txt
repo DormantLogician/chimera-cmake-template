@@ -24,3 +24,5 @@ install(FILES LICENSE.txt DESTINATION ${CMAKE_INSTALL_DOCDIR} COMPONENT app)
 
 # Enable binary and source packaging targets (for certain generators).
 include(CPack)
+
+

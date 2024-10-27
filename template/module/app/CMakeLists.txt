@@ -5,3 +5,5 @@ add_executable(${BINARY_NAME}
 )
 
 setupFlags(${BINARY_NAME})
+
+

@@ -8,3 +8,5 @@ install(TARGETS ${BINARY_NAME} RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR} COMPO
 target_link_libraries(${BINARY_NAME} PRIVATE math)
 
 setupFlags(${BINARY_NAME})
+
+
