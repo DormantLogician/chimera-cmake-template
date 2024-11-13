@@ -3,6 +3,9 @@ set(VALGRIND_COMMAND_OPTIONS "--log-fd=2 --track-origins=yes --tool=memcheck --l
 
 include(CTest) # Enable testing.
 
+set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
 set(CMAKE_CODEBLOCKS_EXCLUDE_EXTERNAL_FILES ON) # Filter out external files in CodeBlocks IDE.
 
 set(CMAKE_BUILD_PARALLEL_LEVEL 4)
