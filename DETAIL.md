@@ -1,11 +1,14 @@
-# PROJECT_NAME details for developers
+## ProjectName details for developers
 
-## Outline
 ### Problem domain research
 
-### Functional description
+### Delegations
 
-### Required tooling
+### Priorities
+
+### Deadlines
+
+### Functional description
 
 ### Potential development roadblocks
 

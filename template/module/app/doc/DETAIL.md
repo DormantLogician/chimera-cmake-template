@@ -1,11 +1,14 @@
-# TARGET_NAME details for developers
+## TargetName details for developers
 
-## Outline
 ### Problem domain research
 
-### Functional description
+### Delegations
 
-### Required tooling
+### Priorities
+
+### Deadlines
+
+### Functional description
 
 ### Potential development roadblocks
 
