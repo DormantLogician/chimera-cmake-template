@@ -21,4 +21,3 @@ Function that takes zero or more structures and/or functions as
 arguments, produces outputs, and only factors in explicit arguments given by
 user in order to calculate this. Writers and/or readers must be given as
 arguments in order to produce side effects on and/or get info from the world, respectively.
-

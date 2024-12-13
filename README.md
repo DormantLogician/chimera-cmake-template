@@ -31,6 +31,7 @@ A generic CMake project template that focuses on both completeness, and meeting 
     LICENSE.txt       (Describes permissions granted to others so they can use your software)
     README.md         (Contains info on what project is, and how to build project)
     SECURITY.md       (Describes how to report security vulnerabilities properly)
+    COMPONENTS.md     (Defines types of code objects that may be created in project)
     .clang-tidy       (Configuration for Clang Tidy static analyzer)
     .editorconfig     (Configuration file recognized by certain editors which defines project-wide settings)
     .gitattributes    (Configuration file used by Git to apply modifications to certain files)
