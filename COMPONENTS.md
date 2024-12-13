@@ -1,7 +1,7 @@
 ## Software component categories
 
 ### Module
-Set that gives access to at least one structure/reader/writer/function/module declaration and definition
+Set that gives access to at least one structure/reader/writer/function/module declaration and definition.
 
 ### Structure
 A basic class with only public getter and setter methods,
@@ -14,7 +14,7 @@ containing info from world - cannot contain any testable logic.
 
 ### Writer
 Function that takes a single structure as an argument, writes data to world, and outputs
-nothing - cannot contain any testable logic
+nothing - cannot contain any testable logic.
 
 ### Function
 Function that takes zero or more structures and/or functions as
