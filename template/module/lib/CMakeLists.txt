@@ -4,7 +4,7 @@ add_library(${BINARY_NAME}
     # Add sources for library here.
 )
 
-install(TARGETS ${BINARY_NAME} ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR} COMPONENT lib)
+install(TARGETS ${BINARY_NAME} LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR} COMPONENT lib)
 
 install(FILES
     inc/${BINARY_NAME}/public/fn/fn.h
@@ -28,6 +28,6 @@ setupFlags(${BINARY_NAME})
 target_include_directories(${BINARY_NAME} PUBLIC inc)
 
 # Please fill in (if applicable) test targets as described below.
-# addTestDir(test/all_lib_specs)
+# addTestDir(test)
 
 
