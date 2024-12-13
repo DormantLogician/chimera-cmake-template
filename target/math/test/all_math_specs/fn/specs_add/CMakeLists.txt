@@ -2,11 +2,11 @@ set(SUITE_NAME add)
 set(SUITE_TARGET ${BINARY_NAME}_${SUITE_NAME})
 
 add_library(specs_${SUITE_TARGET} OBJECT
-    specs_${SUITE_NAME}.cpp
+    specs.cpp
 )
 
 add_library(specs_nonfunctional_${SUITE_TARGET} OBJECT
-    specs_nonfunctional_${SUITE_NAME}.cpp
+    specs_nonfunctional.cpp
 )
 
 target_link_libraries(specs_${SUITE_TARGET} PRIVATE ${BINARY_NAME} ${TESTING_FRAMEWORK_TARGET})
