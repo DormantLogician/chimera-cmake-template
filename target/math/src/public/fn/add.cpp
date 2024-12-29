@@ -7,5 +7,3 @@ namespace math
         return first + second;
     };
 };
-
-

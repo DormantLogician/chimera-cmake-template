@@ -1,6 +1,8 @@
 #ifndef F_ADD_H
 #define F_ADD_H
 
+#include "math_export.h"
+
 namespace math
 {
     /**
@@ -9,9 +11,7 @@ namespace math
      * @param first number to start with.
      * @param second number to add to first number.
      */
-    long long add(const long long first, const long long second);
+    math_EXPORT long long add(const long long first, const long long second);
 };
 
 #endif
-
-

@@ -1,20 +1,20 @@
-set(BINARY_NAME lib)
+set(BINARY_NAME math)
 set(TEST_MODULE_TARGET all_${BINARY_NAME}_specs)
 set(TESTING_FRAMEWORK_TARGET Boost::unit_test_framework)
 
 makeTest(${TEST_MODULE_TARGET} main.cpp)
 target_sources(${TEST_MODULE_TARGET} PRIVATE
-    specs_unitname.cpp
+    specs_add.cpp
 )
 
-target_link_libraries(${TEST_MODULE_TARGET} PRIVATE ${TESTING_FRAMEWORK_TARGET})
+target_link_libraries(${TEST_MODULE_TARGET} PRIVATE ${BINARY_NAME} ${TESTING_FRAMEWORK_TARGET})
 
 makeTest(${TEST_MODULE_TARGET}_nonfunctional main_nonfunctional.cpp)
 target_sources(${TEST_MODULE_TARGET}_nonfunctional PRIVATE
-    specs_unitname_nonfunctional.cpp
+    specs_add_nonfunctional.cpp
 )
 
-target_link_libraries(${TEST_MODULE_TARGET}_nonfunctional PRIVATE benchmark::benchmark)
+target_link_libraries(${TEST_MODULE_TARGET}_nonfunctional PRIVATE ${BINARY_NAME} benchmark::benchmark)
 
 set_property(
     TEST ${TEST_MODULE_TARGET}_nonfunctional
