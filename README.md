@@ -14,10 +14,11 @@ A generic CMake project template that focuses on both completeness, and meeting 
 - Clang Tidy static analyzer for error checking at compile time.
 - Boost Test for creating test suites.
 - Google Benchmark for specifying performance requirements.
-- Valgrind and sanitizers for detecting security defects in tests at runtime.
+- Memory analyzers and sanitizers for detecting security defects in tests at runtime.
 - Templates for app, library, subsystem, and test targets.
 - Build types for profiling and test coverage.
-- CMake tasks for test coverage, valgrind/sanitzier with tests, and binary packaging.
+- CMake tasks for test coverage, memory analyzer/sanitziers with tests, and binary packaging.
+- GitHub actions workflow for continuous integration.
 
 ### Folders
 
@@ -27,6 +28,7 @@ A generic CMake project template that focuses on both completeness, and meeting 
     test_package      (Contains a Conan recipe that is used to test if our Conan package can be consumed by our users)
     util              (Contains scripts and/or programs that are used help build, maintain, or package the project)
     .git              (Contains git configuration and commit history)
+    .github           (Contains GitHub Actions continuous integration configuration)
 
 ### Files
 
