@@ -1,20 +1,20 @@
-## Software component categories
+## Software components
 
-#### Module
+#### Interface
 
-Set that gives access to at least one structure, reader, writer, function, or module definition/declaration. Modules may be either public (where user is outside of project) or private (where user is local to project).
+Set that contains at least one reader, writer, function, or module declaration key - key is public to users.
+
+#### Classification
+
+Set that contains at least one reader, writer, function, or module definition value - value is private to users. May implement one or more interfaces.
 
 #### Unit
 
-An integer (either strongly or weakly typed) or decimal type, smart pointer class, or non-structure class from outside of project.
-
-#### Structure
-
-Either a unit, or a class with only public getter and setter methods, constructors, and an implementation-defined (if inside a public module) data layout - it must be possible to explicitly set unit and/or structure states for testing purposes if not a unit. Non-unit structures may only non-virtually inherit from one or more other structures.
+An integer or decimal, or a non-structure class that is located outside of project.
 
 #### Function
 
-Takes zero or more units, structures, and/or functions as arguments, produces outputs, and only factors in explicit arguments given by user in order to calculate this. Writers and/or readers must be given as arguments in order to produce side effects on and/or get info from the world, respectively.
+Takes zero or more units, structures, and/or functions as arguments, produces outputs, and only factors in explicit arguments given by user and/or data members of class it is inside of in order to calculate this. Writers and/or readers must be given as arguments in order to produce side effects on and/or get info from the world.
 
 #### Reader
 
